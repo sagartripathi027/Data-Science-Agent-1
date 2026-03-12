@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "AI Data Science Agent"
+version = "1.0.0"
+id = "artifacts/ds-agent"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 18801
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/ds-agent run dev"
+
+[services.env]
+PORT = "18801"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/ds-agent", "run", "build"]
+publicDir = "artifacts/ds-agent/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

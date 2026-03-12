@@ -1,0 +1,22 @@
+packages:
+  "recharts": "For rendering data science charts inline within chat responses"
+  "react-dropzone": "For handling dataset file drag-and-drop uploads"
+  "framer-motion": "For smooth transitions, message entry animations, and polished micro-interactions"
+  "lucide-react": "For UI icons across the application"
+  "clsx": "Utility for constructing className strings"
+  "tailwind-merge": "Utility for merging tailwind classes"
+  "date-fns": "For formatting session dates"
+  "@tanstack/react-query": "For data fetching and state management"
+  "wouter": "For client-side routing"
+
+images:
+  - path: "artifacts/ds-agent/public/images/hero-bg.png"
+    description: "Abstract dark mode data science background with glowing neon cyan and purple data points, grid lines, and subtle deep blue gradients, professional tech aesthetic"
+    aspect_ratio: "16:9"
+  - path: "artifacts/ds-agent/public/images/empty-state.png"
+    description: "Minimalist glowing 3d isometric cube showing data flowing, deep dark background with neon teal highlights, professional clean style"
+    aspect_ratio: "1:1"
+
+notes:
+  - All styling assumes a dark mode default with high contrast accents suited for a professional data tool.
+  - Using generated API hooks from @workspace/api-client-react.
