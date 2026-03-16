@@ -4,6 +4,8 @@ import pandas as pd
 from services.data_profiler import DataProfiler
 from services.eda_engine import EDAEngine
 from services.ml_engine import MLEngine
+from routes.analyze import router as analyze_router
+from routes.predict import router as predict_router
 
 
 # Create FastAPI app FIRST
@@ -13,6 +15,8 @@ app = FastAPI()
 profiler = DataProfiler()
 eda = EDAEngine()
 ml = MLEngine() 
+app.include_router(analyze_router)
+app.include_router(predict_router)
 
 
 

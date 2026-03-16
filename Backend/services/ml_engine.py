@@ -1,8 +1,12 @@
 import pandas as pd
+import os
+import joblib
+
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.metrics import accuracy_score, mean_squared_error
+
+MODEL_PATH = "storage/model.pkl"
 
 
 class MLEngine:
@@ -18,6 +22,7 @@ class MLEngine:
 
         # detect problem type
         if y.dtype == "object":
+
             model = RandomForestClassifier()
             model.fit(X_train, y_train)
 
@@ -25,12 +30,12 @@ class MLEngine:
 
             score = accuracy_score(y_test, preds)
 
-            return {
-                "problem_type": "classification",
-                "accuracy": score
-            }
+            problem_type = "classification"
+
+            metrics = {"accuracy": score}
 
         else:
+
             model = RandomForestRegressor()
             model.fit(X_train, y_train)
 
@@ -38,7 +43,30 @@ class MLEngine:
 
             mse = mean_squared_error(y_test, preds)
 
-            return {
-                "problem_type": "regression",
-                "mse": mse
-            }
+            problem_type = "regression"
+
+            metrics = {"mse": mse}
+
+        # save model
+        os.makedirs("storage", exist_ok=True)
+        joblib.dump(model, MODEL_PATH)
+
+        return {
+            "problem_type": problem_type,
+            **metrics
+        }
+
+
+def load_model():
+
+    if not os.path.exists(MODEL_PATH):
+        raise Exception("Model not trained yet")
+
+    return joblib.load(MODEL_PATH)
+
+
+def predict(model, df):
+
+    preds = model.predict(df)
+
+    return preds.tolist()
