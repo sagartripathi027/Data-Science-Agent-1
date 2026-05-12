@@ -1,5 +1,10 @@
 # AI Data Science Agent
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Flask](https://img.shields.io/badge/Flask-2.0-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+
 ## Project Overview
 
 AI Data Science Agent is a lightweight web application that automates structured dataset analysis using Python, Pandas, and NumPy. Users can upload CSV datasets and instantly receive cleaned data summaries, statistical insights, missing value analysis, and feature-level information through a simple web interface.
@@ -118,3 +123,12 @@ AI-Data-Science-Agent/
 * Implemented data preprocessing, statistical analysis, and missing value handling pipelines for structured datasets.
 * Developed an interactive interface for uploading datasets and generating analytical insights in real time.
 * Automated exploratory data analysis workflows to support data-driven decision-making.
+
+## 🚀 What's Coming Next
+
+- [ ] Support for Excel (.xlsx) file uploads
+- [ ] AI-generated insights using LLM
+- [ ] Data visualization charts (bar, pie, heatmap)
+- [ ] Export analysis report as PDF
+- [ ] User authentication and history
+- [ ] Deploy on cloud (AWS / Render)
