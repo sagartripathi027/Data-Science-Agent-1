@@ -38,7 +38,7 @@ The project is designed to simplify exploratory data analysis (EDA) workflows an
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/sagartripathi/AI-Data-Science-Agent.git
+git clone https://github.com/sagartripathi027/Data-Science-Agent-1.git
 ```
 
 ### 2. Install Dependencies
