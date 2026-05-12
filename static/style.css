@@ -1,0 +1,215 @@
+/* ── Variables ── */
+:root {
+  --bg-from:      #0f172a;
+  --bg-to:        #1e293b;
+  --card-bg:      #ffffff;
+  --card-border:  #e2e8f0;
+  --accent:       #6366f1;
+  --accent-dark:  #4f46e5;
+  --text-primary: #0f172a;
+  --text-muted:   #64748b;
+  --text-light:   #94a3b8;
+  --drop-bg:      #f8fafc;
+  --drop-border:  #cbd5e1;
+  --drop-active:  #eef2ff;
+  --radius-card:  16px;
+  --radius-btn:   10px;
+  --shadow:       0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, var(--bg-from) 0%, var(--bg-to) 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ── */
+.site-header {
+  text-align: center;
+  padding: 48px 24px 0;
+  color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.logo-icon { font-size: 1.8rem; }
+
+.logo-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ── Layout ── */
+.container {
+  width: 100%;
+  max-width: 620px;
+  padding: 32px 20px 24px;
+  flex: 1;
+}
+
+/* ── Upload Card ── */
+.upload-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 36px 32px 32px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.card-subtitle code {
+  background: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--accent-dark);
+}
+
+/* ── Drop Zone ── */
+.drop-zone {
+  background: var(--drop-bg);
+  border: 2px dashed var(--drop-border);
+  border-radius: 12px;
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.drop-zone.dragover {
+  background: var(--drop-active);
+  border-color: var(--accent);
+}
+
+.drop-icon   { font-size: 2.2rem; margin-bottom: 10px; }
+
+.drop-primary {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.drop-secondary {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+/* ── Browse Button (label) ── */
+.browse-btn {
+  display: inline-block;
+  background: #f1f5f9;
+  border: 1px solid var(--drop-border);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.browse-btn:hover { background: #e2e8f0; }
+
+.file-name {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  word-break: break-all;
+}
+.file-name.selected { color: var(--accent-dark); font-weight: 600; }
+
+/* ── Analyze Button ── */
+.analyze-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.analyze-btn:hover:not(:disabled) { background: var(--accent-dark); transform: translateY(-1px); }
+.analyze-btn:disabled { background: #c7d2fe; cursor: not-allowed; }
+.btn-arrow { font-size: 1.1rem; }
+
+/* ── Tips Row ── */
+.tips-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.tip {
+  flex: 1;
+  min-width: 160px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.tip-icon { font-size: 1rem; flex-shrink: 0; }
+
+/* ── Footer ── */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .upload-card  { padding: 24px 18px; }
+  .card-title   { font-size: 1.25rem; }
+  .tips-row     { flex-direction: column; }
+}

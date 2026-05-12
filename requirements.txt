@@ -1,9 +1,3 @@
-fastapi
-uvicorn
+Flask
 pandas
 numpy
-scikit-learn
-joblib
-pydantic
-pydantic-settings
-python-dotenv
