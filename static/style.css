@@ -1,4 +1,4 @@
-/* ── Variables ── */
+/* Variables */
 :root {
   --bg-from:      #0f172a;
   --bg-to:        #1e293b;
@@ -17,7 +17,7 @@
   --shadow:       0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* ── Reset & Base ── */
+/* Reset & Base  */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -30,7 +30,7 @@ body {
   align-items: center;
 }
 
-/* ── Header ── */
+/*  Header */
 .site-header {
   text-align: center;
   padding: 48px 24px 0;
@@ -59,7 +59,7 @@ body {
   font-style: italic;
 }
 
-/* ── Layout ── */
+/* Layout */
 .container {
   width: 100%;
   max-width: 620px;
@@ -67,7 +67,7 @@ body {
   flex: 1;
 }
 
-/* ── Upload Card ── */
+/* Upload Card */
 .upload-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -98,7 +98,7 @@ body {
   color: var(--accent-dark);
 }
 
-/* ── Drop Zone ── */
+/* Drop Zone */
 .drop-zone {
   background: var(--drop-bg);
   border: 2px dashed var(--drop-border);
@@ -130,7 +130,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* ── Browse Button (label) ── */
+/* Browse Button (label) */
 .browse-btn {
   display: inline-block;
   background: #f1f5f9;
@@ -153,7 +153,7 @@ body {
 }
 .file-name.selected { color: var(--accent-dark); font-weight: 600; }
 
-/* ── Analyze Button ── */
+/* Analyze Button */
 .analyze-btn {
   width: 100%;
   display: flex;
@@ -175,7 +175,7 @@ body {
 .analyze-btn:disabled { background: #c7d2fe; cursor: not-allowed; }
 .btn-arrow { font-size: 1.1rem; }
 
-/* ── Tips Row ── */
+/* Tips Row */
 .tips-row {
   display: flex;
   gap: 12px;
@@ -199,7 +199,7 @@ body {
 }
 .tip-icon { font-size: 1rem; flex-shrink: 0; }
 
-/* ── Footer ── */
+/* Footer */
 .site-footer {
   text-align: center;
   padding: 20px;
@@ -207,7 +207,7 @@ body {
   color: var(--text-light);
 }
 
-/* ── Responsive ── */
+/* Responsive */
 @media (max-width: 480px) {
   .upload-card  { padding: 24px 18px; }
   .card-title   { font-size: 1.25rem; }

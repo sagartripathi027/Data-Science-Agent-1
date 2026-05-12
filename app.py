@@ -12,7 +12,7 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
-# ── Routes ─────────────────────────────────────────────────────
+# Routes 
 
 @app.route("/")
 def home():
@@ -118,7 +118,7 @@ def upload():
             os.remove(filepath)
 
 
-# ── Run Application ────────────────────────────────────────────
+# Run Application
 
 if __name__ == "__main__":
     app.run(debug=True)

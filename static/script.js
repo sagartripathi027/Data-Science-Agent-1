@@ -1,11 +1,11 @@
-// ── Element References ──────────────────────────────────────────────────────
+// Element References
 const dropZone   = document.getElementById("drop-zone");
 const fileInput  = document.getElementById("file-input");
 const fileNameEl = document.getElementById("file-name");
 const analyzeBtn = document.getElementById("analyze-btn");
 const uploadForm = document.getElementById("upload-form");
 
-// ── Validation ───────────────────────────────────────────────────────────────
+// Validation 
 const MAX_SIZE_MB  = 50;
 const MAX_SIZE_B   = MAX_SIZE_MB * 1024 * 1024;
 
@@ -20,7 +20,7 @@ function validate(file) {
   return null;
 }
 
-// ── UI Helpers ────────────────────────────────────────────────────────────────
+//UI Helpers
 function setFile(file) {
   const error = validate(file);
   if (error) {
@@ -44,12 +44,12 @@ function setDragging(active) {
   dropZone.classList.toggle("drag-over", active);
 }
 
-// ── File Input (click / browse) ───────────────────────────────────────────────
+// File Input (click / browse)
 fileInput.addEventListener("change", () => {
   setFile(fileInput.files[0] || null);
 });
 
-// ── Drag-and-Drop ─────────────────────────────────────────────────────────────
+// Drag-and-Drop
 dropZone.addEventListener("click", () => fileInput.click());
 
 dropZone.addEventListener("dragover", (e) => {
@@ -69,7 +69,7 @@ dropZone.addEventListener("drop", (e) => {
   setFile(file);
 });
 
-// ── Form Submit ───────────────────────────────────────────────────────────────
+// Form Submit
 uploadForm.addEventListener("submit", (e) => {
   const error = validate(fileInput.files[0]);
   if (error) {

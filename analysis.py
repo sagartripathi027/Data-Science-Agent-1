@@ -3,10 +3,7 @@
 import pandas as pd
 import numpy as np
 
-
-# ─────────────────────────────────────────────
 # SECTION 1: DATASET OVERVIEW
-# ─────────────────────────────────────────────
 
 def get_shape_info(df):
     """Return number of rows and columns as a string."""
@@ -35,9 +32,7 @@ def get_missing_info(df):
     return "\n".join(lines)
 
 
-# ─────────────────────────────────────────────
 # SECTION 2: DATA CLEANING
-# ─────────────────────────────────────────────
 
 def remove_duplicates(df):
     """
@@ -83,9 +78,7 @@ def handle_missing_values(df):
     return df, "\n".join(changes)
 
 
-# ─────────────────────────────────────────────
 # SECTION 3: DATA PREPROCESSING
-# ─────────────────────────────────────────────
 def preprocess_data(df):
     """
     Light preprocessing steps:
@@ -98,7 +91,7 @@ def preprocess_data(df):
     changes = []
     df = df.copy()
 
-    # ── Normalize column names ─────────────────────
+    # Normalize column names
     original_cols = list(df.columns)
 
     df.columns = (
@@ -120,7 +113,7 @@ def preprocess_data(df):
     else:
         changes.append("  Column names already clean.")
 
-    # ── Clean string columns ───────────────────────
+    # Clean string columns
     str_cols = df.select_dtypes(include="object").columns
 
     for col in str_cols:
@@ -139,7 +132,7 @@ def preprocess_data(df):
             f"  Cleaned whitespace in {len(str_cols)} text column(s)."
         )
 
-    # ── Safe datetime parsing ──────────────────────
+    # Safe datetime parsing
     parsed_dates = []
 
     for col in str_cols:
@@ -174,9 +167,7 @@ def preprocess_data(df):
 
     return df, "\n".join(changes)
 
-# ─────────────────────────────────────────────
 # SECTION 4: EDA — CATEGORICAL ANALYSIS
-# ─────────────────────────────────────────────
 
 def get_categorical_analysis(df, top_n=5):
     """
@@ -203,9 +194,7 @@ def get_categorical_analysis(df, top_n=5):
     return "\n".join(lines)
 
 
-# ─────────────────────────────────────────────
 # SECTION 5: STATISTICAL ANALYSIS
-# ─────────────────────────────────────────────
 
 def get_summary_statistics(df):
     """Return summary statistics for numeric columns only."""
@@ -265,9 +254,7 @@ def detect_outliers(df):
     return "\n".join(lines)
 
 
-# ─────────────────────────────────────────────
 # SECTION 6: CORRELATION ANALYSIS
-# ─────────────────────────────────────────────
 
 def get_correlation_matrix(df):
     """Return a correlation matrix for numeric columns."""
@@ -279,10 +266,7 @@ def get_correlation_matrix(df):
     corr = numeric_df.corr().round(2)
     return corr.to_string()
 
-
-# ─────────────────────────────────────────────
 # SECTION 7: FINAL INSIGHTS
-# ─────────────────────────────────────────────
 
 def generate_insights(df):
     """
@@ -338,10 +322,7 @@ def generate_insights(df):
 
     return "\n".join(insights)
 
-
-# ─────────────────────────────────────────────
 # MAIN PIPELINE
-# ─────────────────────────────────────────────
 
 def analyze_data(df):
     """
@@ -364,14 +345,14 @@ def analyze_data(df):
     report.append("        CSV DATA ANALYSIS REPORT")
     report.append("=" * 50)
 
-    # ── 1. DATASET OVERVIEW ──────────────────────────
+    # 1. DATASET OVERVIEW
     report.append("\n📋 DATASET OVERVIEW")
     report.append(get_shape_info(df))
     report.append("\n" + get_dtype_info(df))
     report.append(separator + "❓ MISSING VALUES (before cleaning)")
     report.append(get_missing_info(df))
 
-    # ── 2. DATA CLEANING ─────────────────────────────
+    # 2. DATA CLEANING
     report.append(separator + "🧹 DATA CLEANING")
 
     df, dup_summary = remove_duplicates(df)
@@ -382,27 +363,27 @@ def analyze_data(df):
     df, fill_summary = handle_missing_values(df)
     report.append(fill_summary)
 
-    # ── 3. DATA PREPROCESSING ────────────────────────
+    # 3. DATA PREPROCESSING 
     report.append(separator + "⚙️  DATA PREPROCESSING")
     df, preprocess_summary = preprocess_data(df)
     report.append(preprocess_summary)
 
-    # ── 4. EDA — CATEGORICAL ANALYSIS ────────────────
+    # 4. EDA — CATEGORICAL ANALYSIS 
     report.append(separator + "🗂️  CATEGORICAL ANALYSIS")
     report.append(get_categorical_analysis(df))
 
-    # ── 5. STATISTICAL ANALYSIS ──────────────────────
+    # 5. STATISTICAL ANALYSIS 
     report.append(separator + "📊 SUMMARY STATISTICS")
     report.append(get_summary_statistics(df))
 
     report.append(separator + "🔍 OUTLIER DETECTION  (IQR method)")
     report.append(detect_outliers(df))
 
-    # ── 6. CORRELATION ANALYSIS ──────────────────────
+    # 6. CORRELATION ANALYSIS 
     report.append(separator + "🔗 CORRELATION MATRIX")
     report.append(get_correlation_matrix(df))
 
-    # ── 7. FINAL INSIGHTS ────────────────────────────
+    # 7. FINAL INSIGHTS 
     report.append(separator + "💡 FINAL INSIGHTS")
     report.append(generate_insights(df))
 
