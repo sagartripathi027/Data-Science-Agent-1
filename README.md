@@ -118,15 +118,6 @@ AI-Data-Science-Agent/
 
 ![Result Page](screenshots/result.png)
 
-## 🏆 Resume-Ready Description
-
-**AI Data Science Agent** | Python, Flask, Pandas, NumPy, JavaScript
-
-- Architected and deployed a full-stack AI-powered data analysis web application capable of processing structured CSV datasets with zero manual configuration.
-- Engineered automated EDA pipelines covering data cleaning, missing value detection, statistical summaries, correlation matrices, and feature-level analysis.
-- Built a responsive Flask-based REST API backend integrated with a dynamic frontend for real-time dataset uploads and instant insight generation.
-- Reduced exploratory data analysis time by automating repetitive preprocessing and reporting workflows end-to-end.
-
 ## 🚀 What's Coming Next
 
 - [ ] Support for Excel (.xlsx) file uploads
