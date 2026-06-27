@@ -119,51 +119,6 @@ SmartData-Explorer/
 │   └── 📄 script.js             # JavaScript functionality
 │
 └── 📄 README.md                  # Project documentation
-```
-
----
-
-## 🔄 Workflow & How It Works
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  1. Upload CSV File                                         │
-│     User selects and uploads dataset                        │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  2. System Processes Dataset Automatically                  │
-│     - Validates file format                                 │
-│     - Loads data into pandas DataFrame                      │
-│     - Performs initial data cleaning                        │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  3. Analysis & Insights Generation                          │
-│     ✓ Data Summary (rows, columns, shape)                  │
-│     ✓ Data Types & Info                                     │
-│     ✓ Missing Values Report                                 │
-│     ✓ Descriptive Statistics                                │
-│     ✓ Outlier Detection                                     │
-│     ✓ Correlation Matrix                                    │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  4. Visualization & Display                                 │
-│     ✓ Interactive Correlation Heatmap                       │
-│     ✓ Statistical Charts & Graphs                           │
-│     ✓ Summary Tables & Reports                              │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  5. Results Displayed Instantly                             │
-│     User views comprehensive analysis report                │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ---
 
@@ -199,14 +154,6 @@ Create a `.env` file in the root directory:
 FLASK_ENV=development
 FLASK_DEBUG=True
 MAX_UPLOAD_SIZE=50MB
-```
-
-### Modifying Upload Limits
-Edit `app.py` to change maximum file upload size:
-```python
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB
-```
-
 ---
 
 ## 📋 Requirements
@@ -219,42 +166,6 @@ numpy==1.21.0
 scipy==1.7.0
 plotly==5.0.0
 ```
-
-To generate your own requirements file:
-```bash
-pip freeze > requirements.txt
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. **Fork the repository**
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/SmartData-Explorer.git
-   ```
-
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-
-3. **Commit your changes**
-   ```bash
-   git commit -m "Add amazing feature"
-   ```
-
-4. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-
-5. **Open a Pull Request**
-
----
-
 ## 📝 License
 
 This project is licensed under the **MIT License** - see the LICENSE file for details.
@@ -266,12 +177,6 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 **Sagar Tripathi**
 - GitHub: [@sagartripathi027](https://github.com/sagartripathi027)
 - Project: [SmartData Explorer](https://github.com/sagartripathi027/SmartData-Explorer)
-
----
-
-## 📞 Support & Issues
-
-Found a bug or have a suggestion? Please [open an issue](https://github.com/sagartripathi027/SmartData-Explorer/issues) on GitHub.
 
 ---
 
